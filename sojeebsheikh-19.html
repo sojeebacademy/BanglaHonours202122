@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang='bn'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <title>শিক্ষার্থী প্রোফাইল - ফুলবাড়িয়া বিশ্ববিদ্যালয় কলেজ</title>
+    
+    <link rel='preconnect' href='https://fonts.googleapis.com'/>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='anonymous'/>
+    <link href='https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&amp;family=Noto+Serif+Bengali:wght@400;500;600;700&amp;display=swap' rel='stylesheet'/>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .profile-header {
+            background: linear-gradient(135deg, #2c5f2d 0%, #97c93d 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom center no-repeat;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .college-logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .college-name {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .department-name {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Profile Image Section */
+        .profile-image-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid #2c5f2d;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .student-name {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 2rem;
+            color: #2c5f2d;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .student-id {
+            font-size: 1.1rem;
+            color: #666;
+            background: #f0f7f4;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .student-batch {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Info Sections */
+        .info-container {
+            padding: 40px;
+        }
+
+        .info-section {
+            margin-bottom: 35px;
+        }
+
+        .info-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 1.5rem;
+            color: #2c5f2d;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #97c93d;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.8rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .profile-footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-header {
+                padding: 30px 20px;
+            }
+
+            .college-name {
+                font-size: 1.4rem;
+            }
+
+            .department-name {
+                font-size: 1rem;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .student-name {
+                font-size: 1.6rem;
+            }
+
+            .info-container {
+                padding: 30px 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .profile-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .contact-item:hover,
+            .info-item:hover {
+                transform: none;
+            }
+        }
+
+        /* Additional Styling */
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #e3f2fd;
+            color: #1976d2;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .blood-group {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .gender {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+    </style>
+</head>
+<body>
+    <div class='profile-container'>
+        <!-- Header -->
+        <div class='profile-header'>
+            <div class='college-logo'>🎓</div>
+            <h1 class='college-name'>ফুলবাড়িয়া বিশ্ববিদ্যালয় কলেজ</h1>
+            <p class='department-name'>বাংলা বিভাগ</p>
+        </div>
+
+        <!-- Profile Image Section -->
+        <div class='profile-image-section'>
+            <img src='https://via.placeholder.com/180/667eea/ffffff?text=ছবি' alt='Student Photo' class='profile-image'/>
+            <h2 class='student-name'>মোঃ সজীব শেখ</h2>
+            <p class='student-id'>🆔 রোল নম্বর: ২১০১০১</p>
+            <p class='student-batch'>📚 অনার্স ২০২১–২২</p>
+        </div>
+
+        <!-- Info Container -->
+        <div class='info-container'>
+            <!-- College Info -->
+            <div class='info-section'>
+                <h3 class='section-title'>
+                    <span class='section-icon'>🏛️</span>
+                    কলেজের তথ্য
+                </h3>
+                <div class='info-grid'>
+                    <div class='info-item'>
+                        <div class='info-label'>বিভাগ</div>
+                        <div class='info-value'>বাংলা বিভাগ</div>
+                    </div>
+                    <div class='info-item'>
+                        <div class='info-label'>শ্রেণি</div>
+                        <div class='info-value'>অনার্স চতুর্থ বর্ষ</div>
+                    </div>
+                    <div class='info-item'>
+                        <div class='info-label'>সেশন</div>
+                        <div class='info-value'>২০২১-২২</div>
+                    </div>
+                    <div class='info-item'>
+                        <div class='info-label'>রেজিস্ট্রেশন নম্বর</div>
+                        <div class='info-value'>১২৩৪৫৬৭৮৯০</div>
+                    </div>
+                    <div class='info-item'>
+                        <div class='info-label'>ভর্তির তারিখ</div>
+                        <div class='info-value'>০১ জানুয়ারি ২০২২</div>
+                    </div>
+                    <div class='info-item'>
+                        <div class='info-label'>একাডেমিক বছর</div>
+                        <div class='info-value'>২০২৪-২৫</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Info -->
+            <div class='info-section'>
+                <h3 class='section-title'>
+                    <span class='section-icon'>👤</span>
+                    ব্যক্তিগত তথ্য
+                </h3>
+                <div class='info-grid'>
+                    <div class='info-item'>
+                        <div class='info-label'>পিতার নাম</div>
+                        <div class='info-value'>মোঃ আবুল হোসেন শেখ</div>
+                    </div>
+                    <div class='info-item'>
+                        <div class='info-label'>মাতার নাম</div>
+                        <div class='info-value'>মোছাঃ রেহেনা বেগম</div>
+                    </div>
+                    <div class='info-item'>
+                        <div class='info-label'>জন্ম তারিখ</div>
+                        <div class='info-value'>১৫ মার্চ ২০০৩</div>
+                    </div>
+                    <div class='info-item'>
+                        <div class='info-label'>জাতীয়তা</div>
+                        <div class='info-value'>বাংলাদেশী</div>
+                    </div>
+                    <div class='info-item'>
+                        <div class='info-label'>ধর্ম</div>
+                        <div class='info-value'>ইসলাম</div>
+                    </div>
+                    <div class='info-item'>
+                        <div class='info-label'>জাতীয় পরিচয়পত্র</div>
+                        <div class='info-value'>১২৩৪৫৬৭৮৯০১২৩</div>
+                    </div>
+                </div>
+                <div style='margin-top: 15px;'>
+                    <span class='badge gender'>👨 পুরুষ</span>
+                    <span class='badge blood-group'>🩸 রক্তের গ্রুপ: O+</span>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class='info-section'>
+                <h3 class='section-title'>
+                    <span class='section-icon'>📞</span>
+                    যোগাযোগ
+                </h3>
+                <div class='contact-grid'>
+                    <div class='contact-item'>
+                        <div class='contact-icon'>📱</div>
+                        <div class='contact-label'>মোবাইল নম্বর</div>
+                        <div class='contact-value'>০১৭xxxxxxxx</div>
+                    </div>
+                    <div class='contact-item'>
+                        <div class='contact-icon'>✉️</div>
+                        <div class='contact-label'>ইমেইল</div>
+                        <div class='contact-value'>sojeeb@example.com</div>
+                    </div>
+                    <div class='contact-item'>
+                        <div class='contact-icon'>🏠</div>
+                        <div class='contact-label'>বর্তমান ঠিকানা</div>
+                        <div class='contact-value'>ফুলবাড়িয়া, ময়মনসিংহ</div>
+                    </div>
+                    <div class='contact-item'>
+                        <div class='contact-icon'>🏘️</div>
+                        <div class='contact-label'>স্থায়ী ঠিকানা</div>
+                        <div class='contact-value'>গ্রাম: বাগমারা, ফুলবাড়িয়া, ময়মনসিংহ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class='profile-footer'>
+            <p>© ২০২৫ ফুলবাড়িয়া বিশ্ববিদ্যালয় কলেজ | সর্বস্বত্ব সংরক্ষিত</p>
+            <p style='margin-top: 5px; font-size: 0.85rem;'>Designed by Sojeeb Sheikh</p>
+        </div>
+    </div>
+</body>
+</html>
