@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(120deg, #4e54c8, #8f94fb);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-container {
+            background: #ffffff;
+            width: 380px;
+            border-radius: 18px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+
+        .profile-header {
+            background: #5a67d8;
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            object-fit: cover;
+        }
+
+        .profile-body {
+            padding: 25px;
+        }
+
+        .profile-body h2 {
+            text-align: center;
+            margin: 10px 0 5px;
+            color: #2d3748;
+        }
+
+        .profile-body h4 {
+            text-align: center;
+            margin: 0 0 20px;
+            color: #718096;
+            font-weight: normal;
+        }
+
+        .info {
+            margin-top: 10px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #edf2f7;
+            font-size: 14px;
+        }
+
+        .info-row span:first-child {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .info-row span:last-child {
+            color: #2d3748;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #f7fafc;
+            font-size: 13px;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <div class="profile-header">
+        <img src="https://i.ibb.co/Q72JJ2ZK/capture-251128-221427.png" alt="Student Photo">
+    </div>
+
+    <div class="profile-body">
+        <h2>রাফি ইসলাম</h2>
+        <h4>শ্রেণি: ৯ম | বিজ্ঞান বিভাগ</h4>
+
+        <div class="info">
+            <div class="info-row">
+                <span>রোল নম্বর</span>
+                <span>১২</span>
+            </div>
+            <div class="info-row">
+                <span>স্কুল</span>
+                <span>ABC High School</span>
+            </div>
+            <div class="info-row">
+                <span>ইমেইল</span>
+                <span>rafi@gmail.com</span>
+            </div>
+            <div class="info-row">
+                <span>ফোন</span>
+                <span>০১৭xxxxxxxx</span>
+            </div>
+            <div class="info-row">
+                <span>বিষয়</span>
+                <span>গণিত, পদার্থ, রসায়ন</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 Student Profile System
+    </div>
+</div>
+
+</body>
+</html>
