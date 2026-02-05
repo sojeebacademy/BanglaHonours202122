@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ফুলবাড়িয়া বিশ্ববিদ্যালয় কলেজ - বাংলা বিভাগ | অনার্স ২০২১-২২">
+    <title>ফুলবাড়িয়া বিশ্ববিদ্যালয় কলেজ – বাংলা বিভাগ</title>
+    
+    <!-- Google Fonts - Bangla -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&amp;family=Noto+Serif+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #2c5f2d 0%, #97c93d 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Noto Serif Bengali', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Banner Section */
+        .banner {
+            background: linear-gradient(rgba(44, 95, 45, 0.7), rgba(44, 95, 45, 0.7)), 
+                        url('https://via.placeholder.com/1200x400/2c5f2d/ffffff?text=ফুলবাড়িয়া+বিশ্ববিদ্যালয়+কলেজ') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .banner h1 {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .banner h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+        }
+
+        .banner p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Section Styles */
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        section h2 {
+            font-family: 'Noto Serif Bengali', serif;
+            color: #2c5f2d;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid #97c93d;
+        }
+
+        section p {
+            text-align: justify;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Introduction Cards */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .intro-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .intro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .intro-card h3 {
+            color: #2c5f2d;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .intro-card p {
+            color: #555;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* Department Section */
+        .dept-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .highlight-box {
+            background: #f0f7f4;
+            padding: 20px;
+            border-left: 4px solid #2c5f2d;
+            border-radius: 5px;
+        }
+
+        .highlight-box h4 {
+            color: #2c5f2d;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box ul {
+            margin-left: 20px;
+            color: #666;
+        }
+
+        .highlight-box ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Students Section */
+        .students-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .student-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .student-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .student-card .student-number {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .student-card .student-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: 'Noto Serif Bengali', serif;
+        }
+
+        /* Sample student list - Add more as needed */
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .student-table table {
+            width: 100%;
+            min-width: 600px;
+        }
+
+        .student-table th {
+            background-color: #2c5f2d;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .student-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .student-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .student-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c5f2d 0%, #1a3a1a 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content h3 {
+            font-family: 'Noto Serif Bengali', serif;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .footer-divider {
+            width: 100px;
+            height: 3px;
+            background-color: #97c93d;
+            margin: 20px auto;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .designer-credit {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #ffd700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .banner h1 {
+                font-size: 2rem;
+            }
+
+            .banner h2 {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .banner {
+                padding: 60px 20px;
+            }
+
+            .banner h1 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">ফুলবাড়িয়া বিশ্ববিদ্যালয় কলেজ</div>
+            <ul class="nav-links">
+                <li><a href="#home">হোম</a></li>
+                <li><a href="#about">পরিচিতি</a></li>
+                <li><a href="#department">বাংলা বিভাগ</a></li>
+                <li><a href="#students">শিক্ষার্থী তালিকা</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="banner" id="home">
+        <h1>ফুলবাড়িয়া বিশ্ববিদ্যালয় কলেজ</h1>
+        <h2>বাংলা বিভাগ | অনার্স ২০২১–২২</h2>
+        <p>জ্ঞানের আলোয় উজ্জ্বল ভবিষ্যৎ গড়ার প্রত্যয়</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>কলেজ পরিচিতি</h2>
+            <p>
+                ফুলবাড়িয়া কলেজ বাংলাদেশের ফুলবাড়িয়া অঞ্চলে অবস্থিত একটি উচ্চশিক্ষা প্রতিষ্ঠান। কলেজটি <strong>১৯৭২ সালে</strong> প্রতিষ্ঠিত হয়। কলেজটি জাতীয় বিশ্ববিদ্যালয়ের অধিভুক্ত। ১৯৭২ খ্রিষ্টাব্দে এ কলেজে স্নাতকোত্তর শিক্ষা কার্যক্রম প্রবর্তিত হয়।
+            </p>
+            <p>
+                ফুলবাড়ীয়া উপজেলার সর্বোচ্চ বিদ্যাপীঠ হচ্ছে ফুলবাড়ীয়া কলেজ। স্বাধীনতা উত্তর ১৯৭২ সনে মুক্তিযোদ্ধাদের প্রত্যক্ষ সহযোগীতায় এই কলেজের যাত্রা শুরু হয়। শহীদ সৈয়দ নজরুল ইসলাম (মুজিবনগর সরকারের অস্থায়ী রাষ্ট্রপতি) বর্তমান মনোরম পরিবেশে কলেজটির ভিত্তি প্রস্তর স্থাপন করেন।
+            </p>
+            <p>
+                হাঁটি হাঁটি পা পা করে কলেজটি উচ্চ মাধ্যমিক, ডিগ্রি (পাস) থেকে বর্তমানে অনার্স তথা বিশ্ববিদ্যালয় কলেজ হিসেবে প্রতিষ্ঠিত। গতানুগতিক শিক্ষাক্রমের পাশাপাশি সাহিত্য সংস্কৃতি, খেলাধুলা, রোভারিং, বিএনসিসি সহ মেধা বিকাশের সামগ্রিক কর্মকাণ্ডে এই কলেজ দেশের একটি অন্যতম শিক্ষাপ্রতিষ্ঠান।
+            </p>
+
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <h3>🎓 প্রতিষ্ঠা</h3>
+                    <p>১৯৭২ সাল</p>
+                </div>
+                <div class="intro-card">
+                    <h3>📚 অধিভুক্তি</h3>
+                    <p>জাতীয় বিশ্ববিদ্যালয়</p>
+                </div>
+                <div class="intro-card">
+                    <h3>🏆 ঐতিহ্য</h3>
+                    <p>৫০+ বছরের গৌরবময় ইতিহাস</p>
+                </div>
+                <div class="intro-card">
+                    <h3>🌟 অবস্থান</h3>
+                    <p>ফুলবাড়িয়া, ময়মনসিংহ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Department Section -->
+        <section id="department">
+            <h2>বাংলা বিভাগ</h2>
+            <p>
+                বাংলা বিভাগ ফুলবাড়িয়া বিশ্ববিদ্যালয় কলেজের একটি গুরুত্বপূর্ণ ও ঐতিহ্যবাহী বিভাগ। এই বিভাগে বাংলা ভাষা, সাহিত্য এবং সংস্কৃতির বিভিন্ন দিক নিয়ে গভীর পাঠদান ও গবেষণা কার্যক্রম পরিচালিত হয়।
+            </p>
+            <p>
+                <strong>অনার্স ২০২১–২২ বর্ষ</strong> বাংলা বিভাগের একটি উজ্জ্বল অংশ। এই বর্ষের শিক্ষার্থীরা বাংলা ভাষা ও সাহিত্যের প্রতি নিবেদিত এবং তাদের মেধা ও প্রতিভা দিয়ে বিভাগকে সমৃদ্ধ করছে।
+            </p>
+
+            <div class="dept-highlights">
+                <div class="highlight-box">
+                    <h4>📖 পাঠ্যক্রম</h4>
+                    <ul>
+                        <li>প্রাচীন ও মধ্যযুগের বাংলা সাহিত্য</li>
+                        <li>আধুনিক বাংলা সাহিত্য</li>
+                        <li>বাংলা ভাষাতত্ত্ব</li>
+                        <li>বাংলা ব্যাকরণ ও অলংকার</li>
+                        <li>রবীন্দ্র ও নজরুল সাহিত্য</li>
+                    </ul>
+                </div>
+                <div class="highlight-box">
+                    <h4>🎯 উদ্দেশ্য</h4>
+                    <ul>
+                        <li>বাংলা ভাষা ও সাহিত্যে দক্ষতা অর্জন</li>
+                        <li>সৃজনশীল লেখা ও গবেষণায় উৎসাহিত করা</li>
+                        <li>সাংস্কৃতিক ঐতিহ্য সংরক্ষণ</li>
+                        <li>নৈতিক মূল্যবোধ গঠন</li>
+                        <li>উচ্চতর শিক্ষার পথ প্রশস্ত করা</li>
+                    </ul>
+                </div>
+                <div class="highlight-box">
+                    <h4>🌟 বিশেষত্ব</h4>
+                    <ul>
+                        <li>অভিজ্ঞ ও দক্ষ শিক্ষকমণ্ডলী</li>
+                        <li>সমৃদ্ধ বিভাগীয় লাইব্রেরি</li>
+                        <li>নিয়মিত সাহিত্য আলোচনা ও সেমিনার</li>
+                        <li>সাংস্কৃতিক অনুষ্ঠান আয়োজন</li>
+                        <li>ছাত্র-শিক্ষক সুসম্পর্ক</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Students Section -->
+        <section id="students">
+            <h2>শিক্ষার্থী তালিকা - অনার্স ২০২১–২২</h2>
+            <p>বাংলা বিভাগের অনার্স ২০২১–২২ বর্ষের মেধাবী ও প্রতিভাবান শিক্ষার্থীদের তালিকা:</p>
+
+            <!-- Table Format -->
+            <div class="student-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ক্রমিক নং</th>
+                            <th>শিক্ষার্থীর নাম</th>
+                            <th>রোল নম্বর</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>১</td>
+                            <td>মোঃ সজীব শেখ</td>
+                            <td>২১০১০১</td>
+                        </tr>
+                        <tr>
+                            <td>২</td>
+                            <td>আয়েশা খাতুন</td>
+                            <td>২১০১০২</td>
+                        </tr>
+                        <tr>
+                            <td>৩</td>
+                            <td>রাকিব হাসান</td>
+                            <td>২১০১০৩</td>
+                        </tr>
+                        <tr>
+                            <td>৪</td>
+                            <td>সাদিয়া আফরিন</td>
+                            <td>২১০১০৪</td>
+                        </tr>
+                        <tr>
+                            <td>৫</td>
+                            <td>তানভীর আহমেদ</td>
+                            <td>২১০১০৫</td>
+                        </tr>
+                        <tr>
+                            <td>৬</td>
+                            <td>নুসরাত জাহান</td>
+                            <td>২১০১০৬</td>
+                        </tr>
+                        <tr>
+                            <td>৭</td>
+                            <td>ফারহান কবীর</td>
+                            <td>২১০১০৭</td>
+                        </tr>
+                        <tr>
+                            <td>৮</td>
+                            <td>তাসনিম আক্তার</td>
+                            <td>২১০১০৮</td>
+                        </tr>
+                        <tr>
+                            <td>৯</td>
+                            <td>মাহমুদুল হাসান</td>
+                            <td>২১০১০৯</td>
+                        </tr>
+                        <tr>
+                            <td>১০</td>
+                            <td>সুমাইয়া খানম</td>
+                            <td>২১০১১০</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="margin-top: 30px; color: #666; font-style: italic;">
+                <strong>দ্রষ্টব্য:</strong> শিক্ষার্থী তালিকায় নতুন নাম যোগ করতে বা সম্পাদনা করতে ওয়েবসাইট অ্যাডমিনের সাথে যোগাযোগ করুন।
+            </p>
+
+            <!-- Card Grid (Alternative Display) -->
+            <h3 style="margin-top: 40px; color: #2c5f2d; font-family: 'Noto Serif Bengali', serif;">শিক্ষার্থী প্রোফাইল কার্ড</h3>
+            <div class="students-grid">
+                <div class="student-card">
+                    <div class="student-number">রোল: ২১০১০১</div>
+                    <div class="student-name">মোঃ সজীব শেখ</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-number">রোল: ২১০১০২</div>
+                    <div class="student-name">আয়েশা খাতুন</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-number">রোল: ২১০১০৩</div>
+                    <div class="student-name">রাকিব হাসান</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-number">রোল: ২১০১০৪</div>
+                    <div class="student-name">সাদিয়া আফরিন</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-number">রোল: ২১০১০৫</div>
+                    <div class="student-name">তানভীর আহমেদ</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-number">রোল: ২১০১০৬</div>
+                    <div class="student-name">নুসরাত জাহান</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>ফুলবাড়িয়া বিশ্ববিদ্যালয় কলেজ</h3>
+            <p>বাংলা বিভাগ | অনার্স ২০২১–২২</p>
+            <p>ফুলবাড়িয়া, ময়মনসিংহ, বাংলাদেশ</p>
+            
+            <div class="footer-divider"></div>
+            
+            <p class="copyright">
+                © ২০২৫ ফুলবাড়িয়া বিশ্ববিদ্যালয় কলেজ। সর্বস্বত্ব সংরক্ষিত।
+            </p>
+            <p class="designer-credit">
+                Designed by <strong>Sojeeb Sheikh</strong>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
